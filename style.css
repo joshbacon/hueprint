@@ -1,0 +1,64 @@
+:root {
+    --clr1: rgb(62,133,154);
+    --clr2: rgb(67,181,159);
+    --clr3: rgb(244,200,128);
+    --clr4: rgb(229,121,61);
+    --clr5: rgb(227,89,72);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Mynerve', cursive;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background-color: #1b1b1b;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 0.25rem 0;
+    color: rgb(238, 238, 238);
+    background-color: #313131;
+}
+
+header h1 {
+    padding-left: 2rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 50px;
+}
+
+button {
+    cursor: pointer;
+    color: rgb(238, 238, 238);
+    background-color: #33333300;
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient(40deg, var(--clr1) 20%, var(--clr2) 40%, var(--clr3) 60%, var(--clr4) 80%, var(--clr5) 100%);
+}
+
+.exampleText {
+    font-size: 72px;
+    background: linear-gradient(90deg, var(--clr1) 20%, var(--clr2) 40%, var(--clr3) 60%, var(--clr4) 80%, var(--clr5) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
