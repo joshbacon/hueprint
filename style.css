@@ -9,15 +9,16 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Mynerve', cursive;
 }
 
 html {
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     display: grid;
     place-content: center;
     background-color: #1b1b1b;
+    font-family: 'Mynerve', cursive;
 }
 
 header {
@@ -42,13 +43,13 @@ body {
     row-gap: 50px;
 }
 
-button {
+#generateBtn {
     cursor: pointer;
     color: rgb(238, 238, 238);
     background-color: #33333300;
     padding: 1rem 1.5rem;
     font-size: 2rem;
-    
+    font-family: 'Mynerve', cursive;
     border: 10px solid;
     border-image-slice: 1;
     border-width: 5px;
@@ -61,4 +62,145 @@ button {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+section {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    column-gap: 2rem;
+}
+
+.palette {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background: linear-gradient(90deg, var(--clr1) 20%, var(--clr2) 40%, var(--clr3) 60%, var(--clr4) 80%, var(--clr5) 100%);
+}
+
+.colors {
+    width: 100%;
+    position: absolute;
+    bottom: -2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 0.80rem;
+}
+
+.colors * {
+    cursor: pointer;
+}
+
+.window {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background-color: #313131;
+    border: solid;
+    border-width: thin;
+    padding: 10px;
+}
+
+.window::before {
+    content: '';
+    position: relative;
+    display: block;
+    z-index: 10;
+    width: 800px;
+    height: 500px;
+}
+
+.modern-style {
+    font-family: 'Tilt Warp', cursive;
+}
+
+.decal {
+    font-size: 20rem;
+    position: absolute;
+}
+
+.top {
+    color: var(--clr2);
+    top: -10%;
+    left: 12%;
+}
+
+.bottom {
+    color: var(--clr1);
+    bottom: -10%;
+    left: 7%;
+}
+
+.title {
+    color: white;
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+}
+
+.title p {
+    color: var(--clr3);
+}
+
+.options {
+    display: flex;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: baseline;
+    column-gap: 1.5rem;
+}
+
+.options .button {
+    width: 150px;
+    height: 35px;
+    color: var(--clr3);
+    background-color: var(--clr5);
+    border-radius: 5px;
+    display: grid;
+    place-content: center;
+}
+
+.options p {
+    text-decoration: underline;
+}
+
+.options .button p {
+    color: var(--clr3);
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+#confirmCopy {
+    position: absolute;
+    bottom: -75px;
+    color: white;
+    border-radius: 5px;
+    background-color: #313131;
+    padding: 10px 50px;
+    font-size: 1.5rem;
+
+    -webkit-transition: bottom 1s ease-in-out;
+    -moz-transition: bottom 1s ease-in-out;
+    -ms-transition: bottom 1s ease-in-out;
+    -o-transition: bottom 1s ease-in-out;
+    transition: bottom 1s ease-in-out;
+}
+
+.confirm {
+    bottom: 25px !important;
+}
+
+@keyframes moveCopy {
+    0% {bottom: -75px}
+    50% {bottom: 25px}
+    100% {bottom: -75px}
 }

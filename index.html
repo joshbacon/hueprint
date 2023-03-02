@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="script.js"></script>
@@ -21,6 +22,39 @@
     <button id="generateBtn" onclick="generateModel()">
         <p>Generate a Design</p>
     </button>
+
+    <section>
+        <div class="palette">
+            <div class="colors">
+                <span id="clr1" onclick="copyValue('clr1')">rgb(62,133,154)</span>
+                <span id="clr2" onclick="copyValue('clr2')">rgb(67,181,159)</span>
+                <span id="clr3" onclick="copyValue('clr3')">rgb(244,200,128)</span>
+                <span id="clr4" onclick="copyValue('clr4')">rgb(229,121,61)</span>
+                <span id="clr5" onclick="copyValue('clr5')">rgb(227,89,72)</span>
+            </div>
+        </div>
+
+        <div class="window modern-style">
+            <h1 class="decal top">20</h1>
+            <h1 class="decal bottom">01</h1>
+            <div class="title">
+                <h1>Lorem Ipsum</h1>
+                <p>
+                    dolor sit amet, consectetur adipiscing elit,<br>
+                    sed do eiusmod tempor incididunt ut<br>
+                    labore et dolore magna aliqua.
+                </p>
+                <div class="options">
+                    <div class="button">
+                        <p>Press Here</p>
+                    </div>
+                    <p>Contact</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="confirmCopy">Copied</div>
 </body>
 
 </html>
