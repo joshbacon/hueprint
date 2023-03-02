@@ -9,9 +9,19 @@ let clr3 = [244, 200, 128];
 let clr4 = [229, 121, 61 ];
 let clr5 = [227, 89 , 72 ];
 
+let styles = [
+    './templates/modern.html',
+];
+
 
 // Grab color palette and draw on canvas
 let generateModel = function() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", styles[Math.floor(Math.random() * styles.length)], true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+        document.getElementById("template").innerHTML = this.responseText;
+    }
 
     // Request a palette
     let url = "http://colormind.io/api/";
@@ -33,25 +43,35 @@ let generateModel = function() {
             clr5 = palette[4];
 
             let root = document.querySelector(':root');
+            
             let value = `rgb(${clr1[0]},${clr1[1]},${clr1[2]})`;
             root.style.setProperty('--clr1', value);
             let clr = document.getElementById("clr1");
             clr.innerHTML = value;
+            // clr.style.setProperty('background-color', value);
+
             value = `rgb(${clr2[0]},${clr2[1]},${clr2[2]})`;
             root.style.setProperty('--clr2', value);
             clr = document.getElementById("clr2");
+            // clr.style.setProperty('background-color', value);
             clr.innerHTML = value;
+
             value = `rgb(${clr3[0]},${clr3[1]},${clr3[2]})`;
             root.style.setProperty('--clr3', value);
             clr = document.getElementById("clr3");
+            // clr.style.setProperty('background-color', value);
             clr.innerHTML = value;
+
             value = `rgb(${clr4[0]},${clr4[1]},${clr4[2]})`;
             root.style.setProperty('--clr4', value);
             clr = document.getElementById("clr4");
+            // clr.style.setProperty('background-color', value);
             clr.innerHTML = value;
+
             value = `rgb(${clr5[0]},${clr5[1]},${clr5[2]})`;
             root.style.setProperty('--clr5', value);
             clr = document.getElementById("clr5");
+            // clr.style.setProperty('background-color', value);
             clr.innerHTML = value;
 
 
