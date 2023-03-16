@@ -10,8 +10,18 @@ let clr4 = [229, 121, 61 ];
 let clr5 = [227, 89 , 72 ];
 
 let styles = [
-    './templates/modern.html',
+    './templates/template2.html',
 ];
+
+let paletteHTML = `<div class="palette">
+    <div class="colors">
+        <span id="clr1" onclick="copyValue('clr1')">rgb(62,133,154)</span>
+        <span id="clr2" onclick="copyValue('clr2')">rgb(67,181,159)</span>
+        <span id="clr3" onclick="copyValue('clr3')">rgb(244,200,128)</span>
+        <span id="clr4" onclick="copyValue('clr4')">rgb(229,121,61)</span>
+        <span id="clr5" onclick="copyValue('clr5')">rgb(227,89,72)</span>
+    </div>
+</div>`;
 
 
 // Grab color palette and draw on canvas
@@ -20,7 +30,8 @@ let generateModel = function() {
     xhttp.open("GET", styles[Math.floor(Math.random() * styles.length)], true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
-        document.getElementById("template").innerHTML = this.responseText;
+        document.getElementById("template").innerHTML = paletteHTML;
+        document.getElementById("template").innerHTML += this.responseText;
     }
 
     // Request a palette
@@ -32,9 +43,11 @@ let generateModel = function() {
     http.open("POST", url, true);
     http.send(JSON.stringify(data));
 
+    // When we get a palette
     http.onreadystatechange = function() {
-        // When we get a palette
         if( http.readyState == 4 && http.status == 200 ) {
+            if (document.getElementById('btnText').innerHTML !== "Regenerate") updateButton();
+            
             palette = JSON.parse(http.responseText).result;
             clr1 = palette[0];
             clr2 = palette[1];
@@ -48,64 +61,27 @@ let generateModel = function() {
             root.style.setProperty('--clr1', value);
             let clr = document.getElementById("clr1");
             clr.innerHTML = value;
-            // clr.style.setProperty('background-color', value);
 
             value = `rgb(${clr2[0]},${clr2[1]},${clr2[2]})`;
             root.style.setProperty('--clr2', value);
             clr = document.getElementById("clr2");
-            // clr.style.setProperty('background-color', value);
             clr.innerHTML = value;
 
             value = `rgb(${clr3[0]},${clr3[1]},${clr3[2]})`;
             root.style.setProperty('--clr3', value);
             clr = document.getElementById("clr3");
-            // clr.style.setProperty('background-color', value);
             clr.innerHTML = value;
 
             value = `rgb(${clr4[0]},${clr4[1]},${clr4[2]})`;
             root.style.setProperty('--clr4', value);
             clr = document.getElementById("clr4");
-            // clr.style.setProperty('background-color', value);
             clr.innerHTML = value;
 
             value = `rgb(${clr5[0]},${clr5[1]},${clr5[2]})`;
             root.style.setProperty('--clr5', value);
             clr = document.getElementById("clr5");
-            // clr.style.setProperty('background-color', value);
             clr.innerHTML = value;
 
-
-            // // Display it in the canvas
-            // let ctx = grabCanvasContext();
-
-            // // Draw the color rectangles
-            // ctx.fillStyle = `rgb(${clr1[0]}, ${clr1[1]}, ${clr1[2]})`;
-            // ctx.fillRect(canvasSection * 0, 0, canvasSection * 1, canvasHeight);
-            // ctx.fillStyle = `rgb(${clr2[0]}, ${clr2[1]}, ${clr2[2]})`;
-            // ctx.fillRect(canvasSection * 1, 0, canvasSection * 2, canvasHeight);
-            // ctx.fillStyle = `rgb(${clr3[0]}, ${clr3[1]}, ${clr3[2]})`;
-            // ctx.fillRect(canvasSection * 2, 0, canvasSection * 3, canvasHeight);
-            // ctx.fillStyle = `rgb(${clr4[0]}, ${clr4[1]}, ${clr4[2]})`;
-            // ctx.fillRect(canvasSection * 3, 0, canvasSection * 4, canvasHeight);
-            // ctx.fillStyle = `rgb(${clr5[0]}, ${clr5[1]}, ${clr5[2]})`;
-            // ctx.fillRect(canvasSection * 4, 0, canvasSection * 5, canvasHeight);
-            
-            // // Write in the rgb values
-            // ctx.fillStyle = "black";
-            // ctx.textAlign = "center";
-            // ctx.font = "13px Comic Sans MS";
-            // ctx.fillText(`rgb(${clr1[0]},${clr1[1]},${clr1[2]})`, (canvasSection *0) + canvasSection/2, canvasHeight - 20);
-            // ctx.fillText(`rgb(${clr2[0]},${clr2[1]},${clr2[2]})`, (canvasSection *1) + canvasSection/2, canvasHeight - 20);
-            // ctx.fillText(`rgb(${clr3[0]},${clr3[1]},${clr3[2]})`, (canvasSection *2) + canvasSection/2, canvasHeight - 20);
-            // ctx.fillText(`rgb(${clr4[0]},${clr4[1]},${clr4[2]})`, (canvasSection *3) + canvasSection/2, canvasHeight - 20);
-            // ctx.fillText(`rgb(${clr5[0]},${clr5[1]},${clr5[2]})`, (canvasSection *4) + canvasSection/2, canvasHeight - 20);
-
-            // document.body.appendChild(canvas);
-
-            // let exampleText = document.createElement('p');
-            // exampleText.innerHTML = "Example Text";
-            // exampleText.classList.add('exampleText');
-            // document.body.appendChild(exampleText);
         }
     }
 
@@ -137,13 +113,12 @@ function copyValue(clr) {
     }, 1500);
 }
 
-
-// make a section that gets regenerated,
-// then you don't have to check each template/example element
-
-// it will have the palette canvas
-// example text
-// some example buttons
-// idk think of some other stuff
-
-// maybe just the palette and a moc window with example stuff?
+function updateButton() {
+    console.log('updating button');
+    text = document.getElementById('btnText');
+    text.innerHTML = "Regenerate";
+    button = document.getElementById('generateBtn');
+    button.style.setProperty('position', 'absolute');
+    button.style.setProperty('bottom', '50px');
+    button.style.setProperty('left', '50px');
+}

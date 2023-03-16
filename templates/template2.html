@@ -1,0 +1,104 @@
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+<style>
+    .productStyle {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .headerRect {
+        color: var(--clr5);
+        background-color: var(--clr1);
+        width: 100%;
+        height: 58%;
+        padding: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        box-shadow: 0px 1px 38px 19px rgba(0, 0, 0, 0.45);
+        -webkit-box-shadow: 0px 1px 38px 19px rgba(0,0,0,0.45);
+        -moz-box-shadow: 0px 1px 38px 19px rgba(0,0,0,0.45);
+    }
+
+    .headerRect p {
+        text-decoration: underline;
+    }
+
+    .menu {
+        position: absolute;
+        top: 10%;
+        right: 50%;
+    }
+
+    .menu p {
+        rotate: -90deg;
+    }
+
+    .menu p {
+        text-decoration: none;
+    }
+
+    .menu p:nth-child(1) {
+        translate: 370px -130%;
+    }
+
+    .menu p:nth-child(2) {
+        translate: 370px 45%;
+    }
+
+    .menu p:nth-child(3) {
+        translate: 370px 290%;
+    }
+
+    img {
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -40%;
+        width: 55%;
+    }
+
+    .footerRect{
+        background-color: var(--clr4);
+        width: 100%;
+        height: 30%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .footerRect p {
+        z-index: 3;
+        position: absolute;
+        bottom: -5%;
+        left: 10%;
+        color: var(--clr3);
+        font-size: 20px;
+    }
+
+</style>
+
+<div class="window productStyle">
+    <div class="headerRect">
+        <h1>THIS IS A<br>PRODUCT<br>PAGE</h1>
+        <p>shop here</p>
+
+        <div class="menu">
+            <p>Shop</p>
+            <p>About</p>
+            <p>Contact</p>
+        </div>
+    </div>
+
+    <div class="footerRect">
+        <p>
+            Lorem Ipsum dolor sit amet, consectetur<br>
+            adipiscing elit, sed do eiusmod tempor<br>
+            incididunt ut labore et dolore magna aliqua.
+        </p>
+    </div>
+
+    <img src="assets/shoe.png" alt="product image">
+
+</div>

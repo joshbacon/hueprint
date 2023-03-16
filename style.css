@@ -66,16 +66,16 @@ body {
 #template {
     display: flex;
     place-items: center;
-    justify-content: center;
-    column-gap: 2rem;
-    margin-top: 50px;
+    justify-content: space-evenly;
+    width: 100vw;
+    /* margin-top: 50px; */
 }
 
 .palette {
     position: relative;
-    width: 500px;
+    width: 550px;
     height: 300px;
-    background: linear-gradient(90deg, var(--clr1) 20%, var(--clr2) 40%, var(--clr3) 60%, var(--clr4) 80%, var(--clr5) 100%);
+    background: linear-gradient(90deg, var(--clr1) 10%, var(--clr2) 30%, var(--clr3) 50%, var(--clr4) 70%, var(--clr5) 90%);
 }
 
 .colors {
@@ -133,9 +133,8 @@ span:nth-child(5):hover {
     width: 800px;
     height: 500px;
     background-color: #313131;
-    border: solid;
-    border-width: thin;
-    padding: 10px;
+    border: solid thin;
+    overflow: hidden;
 }
 
 .window::before {
