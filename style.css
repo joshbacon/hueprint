@@ -55,20 +55,16 @@ body {
     border-image-source: linear-gradient(40deg, var(--clr1) 20%, var(--clr2) 40%, var(--clr3) 60%, var(--clr4) 80%, var(--clr5) 100%);
 }
 
-.exampleText {
-    font-size: 72px;
-    background: linear-gradient(90deg, var(--clr1) 20%, var(--clr2) 40%, var(--clr3) 60%, var(--clr4) 80%, var(--clr5) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 #template {
     display: flex;
     place-items: center;
     justify-content: space-evenly;
     width: 100vw;
-    /* margin-top: 50px; */
+    overflow: auto;
+}
+
+#template::-webkit-scrollbar {
+    display: none;
 }
 
 .palette {
@@ -154,6 +150,7 @@ span:nth-child(5):hover {
     background-color: #313131;
     padding: 10px 50px;
     font-size: 1.5rem;
+    z-index: 10;
 
     -webkit-transition: bottom 1s ease-in-out;
     -moz-transition: bottom 1s ease-in-out;
@@ -170,4 +167,22 @@ span:nth-child(5):hover {
     0% {bottom: -75px}
     50% {bottom: 25px}
     100% {bottom: -75px}
+}
+
+@media screen and (max-width: 1400px) {
+    #template {
+        flex-direction: column;
+        overflow-y: scroll;
+        row-gap: 50px;
+    }
+
+    .palette {
+        width: clamp(30%, 50%, 750px);
+        aspect-ratio: 1/2;
+    }
+
+    .window {
+        width: 80%;
+        aspect-ratio: 9/16;
+    }
 }

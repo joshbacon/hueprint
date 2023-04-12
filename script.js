@@ -10,7 +10,9 @@ let clr4 = [229, 121, 61 ];
 let clr5 = [227, 89 , 72 ];
 
 let styles = [
+    './templates/template1.html',
     './templates/template2.html',
+    './templates/template3.html',
 ];
 
 let paletteHTML = `<div class="palette">
@@ -119,6 +121,6 @@ function updateButton() {
     text.innerHTML = "Regenerate";
     button = document.getElementById('generateBtn');
     button.style.setProperty('position', 'absolute');
-    button.style.setProperty('bottom', '50px');
+    button.style.setProperty('top', '75px');
     button.style.setProperty('left', '50px');
 }

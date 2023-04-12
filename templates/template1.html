@@ -5,9 +5,22 @@
         font-family: 'Tilt Warp', cursive;
     }
 
+    .modern-style::after {
+        content: '';
+        background-color: var(--clr5);
+        transform: skewX(30deg);
+        width: 40%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -20%;
+        z-index: 0;
+    }
+
     .decal {
         font-size: 20rem;
         position: absolute;
+        z-index: 1;
     }
 
     .top {

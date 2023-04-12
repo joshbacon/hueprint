@@ -1,0 +1,115 @@
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+<style>
+    .future-style {
+        /* background-color: var(--clr1); */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: start;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+    
+    .header-rect {
+        background-color: var(--clr3);
+        width: 60%;
+        height: 10%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+    }
+
+    .title {
+        padding-left: 10px;
+        font-size: 2rem;
+    }
+
+    .header-accent {
+        background-color: var(--clr5);
+        width: 25%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .main-window {
+        background-color: var(--clr3);
+        width: 60%;
+        height: 82%;
+        position: absolute;
+        top: 18%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .window-accent {
+        background-color: var(--clr2);
+        height: 35%;
+        aspect-ratio: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .window-accent h1 {
+        font-size: 10vh;
+        width: 100%;
+        height: 80%;
+        display: grid;
+        justify-items: center;
+    }
+    
+    .window-accent p {
+        font-size: 2vh;
+        width: 100%;
+        height: 20%;
+        text-align: center;
+    }
+
+    .window-image {
+        width: 65%;
+        aspect-ratio: 1.55;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 7px;
+    }
+
+    .content {
+        position: absolute;
+        top: 65%;
+        left: 10%;
+        width: 80%;
+        height: 35%;
+    }
+
+    .content::first-line {
+        font-size: 2rem;
+    }
+</style>
+
+<div class="window future-style">
+    <div class="header-rect">
+        <h2 class="title">exo</h2>
+        <div class="header-accent"></div>
+    </div>
+
+    <div class="main-window">
+        <div class="window-accent">
+            <h1>23</h1>
+            <p>April-2023</p>
+        </div>
+        <img src="../assets/minimal.png" class="window-image">
+        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </div>
+</div>
