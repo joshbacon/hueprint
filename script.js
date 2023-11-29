@@ -116,7 +116,6 @@ function copyValue(clr) {
 }
 
 function updateButton() {
-    console.log('updating button');
     text = document.getElementById('btnText');
     text.innerHTML = "Regenerate";
     button = document.getElementById('generateBtn');
